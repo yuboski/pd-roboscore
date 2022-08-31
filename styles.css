@@ -1,0 +1,32 @@
+.calculator-logo-image {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.calculator-input {
+  padding: 20px;
+}
+
+.calculator-input-result {
+  padding: 20px;
+}
+
+.calculator-input-switch {
+  height: auto;
+}
+
+.calculator-input-switch-label  {
+  
+}
+
+.calculator-input-button {
+  padding: 20px;
+}
+
+.calculator-input-values {
+  padding: 20px;
+}
+
+.calculator-card-wide {
+  width: 100%;
+}

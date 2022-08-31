@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="PD-ROBOSCORE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="The PD-ROBOSCORE: an I-MIPS difficulty score for robotic pancreatoduodenectomy" />
+    <meta property="og:title" content="PD-ROBOSCORE" />
+    <meta property="og:url" content="https://pd-roboscore.herokuapp.com/" />
+    <meta property="og:description" content="I-MIPS difficulty score for robotic pancreatoduodenectomy" />
+    <meta property="og:image" content="https://pd-roboscore.herokuapp.com/I-MIPS-logo.png" />
+    <title>PD-ROBOSCORE</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js?version=1"></script>
+  </head>
+  <body>
+    
+    <!-- HEADER -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <div class="mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          
+          <span class="calculator-title mdl-layout-title">
+            PD-ROBOSCORE
+          </span>
+          
+          <div class="calculator-header-spacer mdl-layout-spacer"></div>
+          <span class="calculator-title mdl-layout-title">
+            <img class="calculator-logo-image" src="I-MIPS-logo-small.png">
+          </span>
+          <span class="calculator-title mdl-layout-title">
+            <img class="calculator-logo-image" src="unipi.png">
+          </span>
+        </div>
+      </div>
+      
+      
+
+    <!-- CONTENT -->
+    <div class="calculator-input mdl-layout__content">
+      <div class="calculator-subtitle mdl-layout-title">
+        The PD-ROBOSCORE: an I-MIPS difficulty score for robotic pancreatoduodenectomy
+      </div>
+
+      <!-- INPUT -->
+      <div class="calculator-input-values">
+        <!-- HIGH BODY MASS INDEX -->
+        <label
+          id="switch-HBMI"
+          class="calculator-input-switch mdl-switch mdl-js-switch mdl-js-ripple-effect"
+          for="input-HBMI"
+        >
+          <input type="checkbox" id="input-HBMI" class="mdl-switch__input" unchecked />
+          <span class="calculator-input-switch-label mdl-switch__label">BMI ≥ 25 Kg/m² for male and ≥ 30 Kg/m² for female</span>
+        </label>
+        <!-- Borderline resectable tumor -->
+        <label
+          id="switch-BRT"
+          class="calculator-input-switch mdl-switch mdl-js-switch mdl-js-ripple-effect"
+          for="input-BRT"
+        >
+          <input type="checkbox" id="input-BRT" class="mdl-switch__input" unchecked />
+          <span class="calculator-input-switch-label mdl-switch__label">Borderline resectability status</span>
+        </label>
+        <!-- ASA >=3 -->
+        <label
+          id="switch-ASAGT3"
+          class="calculator-input-switch mdl-switch mdl-js-switch mdl-js-ripple-effect"
+          for="input-ASAGT3"
+        >
+          <input type="checkbox" id="input-ASAGT3" class="mdl-switch__input" unchecked />
+          <span class="calculator-input-switch-label mdl-switch__label">ASA ≥ 3</span>
+        </label>
+        <!-- Uncinate process tumor -->
+        <label
+          id="switch-UPT"
+          class="calculator-input-switch mdl-switch mdl-js-switch mdl-js-ripple-effect"
+          for="input-UPT"
+        >
+          <input type="checkbox" id="input-UPT" class="mdl-switch__input" unchecked />
+          <span class="calculator-input-switch-label mdl-switch__label">Tumor in the uncinate process</span>
+        </label>
+        <!-- Hepatic artery from SMA -->
+        <label
+          id="switch-HAFSMA"
+          class="calculator-input-switch mdl-switch mdl-js-switch mdl-js-ripple-effect"
+          for="input-HAFSMA"
+        >
+          <input type="checkbox" id="input-HAFSMA" class="mdl-switch__input" unchecked />
+          <span class="calculator-input-switch-label mdl-switch__label">Common or right hepatic artery originating from superior mesenteric artery</span>
+        </label>
+        <!-- Duct size <4mm -->
+        <label
+          id="switch-DSLT4"
+          class="calculator-input-switch mdl-switch mdl-js-switch mdl-js-ripple-effect"
+          for="input-DSLT4"
+        >
+          <input type="checkbox" id="input-DSLT4" class="mdl-switch__input" unchecked />
+          <span class="calculator-input-switch-label mdl-switch__label">Small pancreatic duct &lt; 4mm</span>
+        </label>
+      </div>
+      
+      
+      <div class="calculator-input-button">
+     
+      <!-- BUTTON  -->
+      <button
+        id="button-calculate"
+        class="mdl-button mdl-js-button mdl-button--raised"
+      >
+        CALCULATE
+      </button>
+        
+      </div>
+      
+      <div class="calculator-input-result">
+
+        <!-- RESULT  -->
+        <div class="calculator-card-wide mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">RESULT</h2>
+          </div>
+          <div
+            id="result-box"
+            class="result-box-value mdl-card__supporting-text"
+          ></div>
+          <div
+            id="score-box"
+            class="score-box-value mdl-card__supporting-text"
+          >
+            <span id="score-box-title">The PD-ROBOSCORE:</span>
+            <span id="score-box-value"></span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+      
+    
+    </div>
+  </body>
+</html>
+
